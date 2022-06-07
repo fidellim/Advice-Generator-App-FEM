@@ -28,6 +28,9 @@ Users should be able to:
 
 ### Screenshot
 
+![Desktop Solution](./images/solution-desktop.png)
+![Mobile Solution](./images/solution-mobile.png)
+
 ### Links
 
 - Solution URL: [Solution](https://github.com/fidellim/Advice-Generator-App-FEM)
