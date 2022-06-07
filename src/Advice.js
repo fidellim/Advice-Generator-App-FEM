@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import patternDivider from "./images/pattern-divider-mobile.svg";
 import dice from "./images/icon-dice.svg";
 
 const Advice = () => {
