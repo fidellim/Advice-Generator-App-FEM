@@ -1,5 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+// Primary
+$lightCyan: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+
+// Neutral
+$grayishBlue: hsl(217, 19%, 38%);
+$darkGrayishBlue: hsl(217, 19%, 24%);
+$darkBlue: hsl(218, 23%, 16%);
+
 * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    background-color: $darkBlue;
+    color: $lightCyan;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.adviceContainer {
+    position: relative;
+    background-color: $darkGrayishBlue;
+    max-width: 550px;
+    width: 100%;
+    padding: 2.5rem 2rem 1.5rem 2rem;
+    border-radius: 12px;
+    margin: 0 1rem;
+
+    h1,
+    p {
+        text-align: center;
+    }
+
+    h1 {
+        color: $neonGreen;
+        font-size: .65rem;
+        margin-bottom: 1.75rem;
+        letter-spacing: .25rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.patternDivider {
+    background-image: url("../images/pattern-divider-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1.25rem;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+.diceContainer {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: $neonGreen;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 0px 0px 20px $neonGreen;
+    }
+}
+
+.dice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 450px) {
+    .patternDivider {
+        background-image: url("../images/pattern-divider-desktop.svg");
+    }
 }
