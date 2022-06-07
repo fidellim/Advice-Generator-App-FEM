@@ -1,24 +1,31 @@
 import { useEffect, useState } from "react";
+import patternDivider from "./images/pattern-divider-mobile.svg";
+import dice from "./images/icon-dice.svg";
 
 const Advice = () => {
 	const [advice, setAdvice] = useState("");
 	const [adviceNum, setAdviceNum] = useState(0);
 
-	useEffect(() => {
-		const fetchAdvice = async () => {
-			const res = await fetch("https://api.adviceslip.com/advice");
-			const data = await res.json();
-			setAdvice(data.slip.advice);
-			setAdviceNum(data.slip.id);
-		};
+	const fetchAdvice = async () => {
+		const res = await fetch("https://api.adviceslip.com/advice");
+		const data = await res.json();
+		setAdvice(data.slip.advice);
+		setAdviceNum(data.slip.id);
+	};
 
+	useEffect(() => {
 		fetchAdvice();
 	}, []);
 
 	return (
-		<div>
+		<div className="adviceContainer">
 			<h1>ADVICE #{adviceNum}</h1>
-			<p>{advice}</p>
+			<p>“{advice}”</p>
+
+			<div className="patternDivider"></div>
+			<div className="diceContainer" onClick={fetchAdvice}>
+				<img className="dice" src={dice} alt="" />
+			</div>
 		</div>
 	);
 };
